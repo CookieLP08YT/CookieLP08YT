@@ -1,0 +1,96 @@
+Before i show the code i wanna let you know that im a noob in python and my code might wont work
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import discord
+import random
+import asyncio
+
+client = discord.Client()
+
+
+@client.event
+async def on_ready():
+    print("User key hacked and logged in {client.user.name} {client.user.id}")
+    client.loop.create_task(status_task())
+
+
+async def status_task():
+    colors = [discord.Colour.red(), discord.Colour.purple(), discord.Colour.orange(),
+              discord.Colour.gold(), discord.Colour.green(), discord.Colour.blue()]
+    while True:
+        await client.change_presence(activity=discord.Game("NEW DEV"))
+        await asyncio.sleep(2)
+        await client.change_presence(activity=discord.Game("TIMO IST COOL"))
+        await asyncio.sleep(2)
+        await client.change_presence(activity=discord.Game("I CANT CODE GOOD"))
+        await asyncio.sleep(2)
+        await client.change_presence(activity=discord.Game("YT,TT,IG:Cookie_LP08"))
+        await asyncio.sleep(2)
+
+        guild = Guild = client.get_guild(784674760826683403)
+        if guild:
+            role = guild.get_role(880460522368172052)
+            if role:
+                if role.position < guild.get_member(client.user.id).top_role.position:
+                    await role.edit(colour=random.choice(colors))
+# shows an message if somebody joines
+@client.event
+async def on_member_join(member):
+    guild = client.get_guild(SERVER ID)
+    channel = guild.get_channel(CHANNEL ID)
+    await channel.send(f"Willkommen {member.mention} Auf dem {guild.name} Server! :cookie:")
+    await member.send(f"Willkommen auf dem {guild.name} Server, {member.name}! :cookie:")
+
+
+client.run("YOUR TOKEN")
+
+
+# a88888b.                   dP       oo                       dP         888888ba   a8888a  .d888b.
+#d8'   `88                   88                                88         88    `8b d8' ..8b Y8' `8P
+#88        .d8888b. .d8888b. 88  .dP  dP .d8888b.              88        a88aaaa8P' 88 .P 88 d8bad8b
+#88        88'  `88 88'  `88 88888"   88 88ooood8              88         88        88 d' 88 88` `88
+#Y8.   .88 88.  .88 88.  .88 88  `8b. 88 88.  ...              88         88        Y8'' .8P 8b. .88
+# Y88888P' `88888P' `88888P' dP   `YP dP `88888P'              88888888P  dP         Y8888P  Y88888P
+#ooooooooooooooooooooooooooooooooooooooooooooooooo vvvvvvvvvvv oooooooooooooooooooooooooooooooooooooo
+#                                                  """""""""""
